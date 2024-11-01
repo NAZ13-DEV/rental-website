@@ -27,8 +27,10 @@ Route::middleware(['auth','role:admin'])->group( function(){
     Route::get("/admin/products", [AdminController::class, 'products'])->name('admin.products');
     Route::get("/admin/create-product", [AdminController::class, 'create'])->name('admin.create');
     Route::get("/admin/orders", [AdminController::class, 'orders'])->name(name: 'admin.orders');
-    Route::get("/admin/order-details", [AdminController::class, 'show'])->name(name: 'admin.showOrder');
+    Route::get("/admin/order-details", [AdminController::class, 'ShowOrder'])->name(name: 'admin.showOrder');
     Route::get("/admin/customers", [AdminController::class, 'customers'])->name(name: 'admin.customers');
+    Route::get("/admin/edit-product", [AdminController::class, 'edit'])->name(name: 'admin.edit');
+    Route::get("/admin/view-product", [AdminController::class, 'ShowProduct'])->name(name: 'admin.ViewProduct');
 });
 
 

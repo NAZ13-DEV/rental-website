@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function orders(){
         return view('admin.orders');
     }
-    public function show(){
+    public function ShowOrder(){
         return view('admin.order-details');
     }
 
@@ -33,6 +33,14 @@ class AdminController extends Controller
     public function customers(){
         return view('admin.customers');
     }
+
+    public function edit(){
+        return view('admin.edit-product');
+    }
+    public function ShowProduct(){
+        return view('admin.view-product');
+    }
+
 
 
 

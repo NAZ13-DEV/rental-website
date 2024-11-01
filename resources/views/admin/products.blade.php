@@ -191,12 +191,12 @@
                                                                                 <ul class="dropdown-menu dropdown-menu-end"
                                                                                     style="">
                                                                                     <li><a class="dropdown-item"
-                                                                                            href="apps-ecommerce-product-details.html"><i
+                                                                                            href="{{ route("admin.ViewProduct")}}"><i
                                                                                                 class="align-bottom ri-eye-fill me-2 text-muted"></i>
                                                                                             View</a></li>
                                                                                     <li><a class="dropdown-item edit-list"
                                                                                             data-edit-id="1"
-                                                                                            href="apps-ecommerce-add-product.html"><i
+                                                                                            href="{{ route("admin.edit")}}"><i
                                                                                                 class="align-bottom ri-pencil-fill me-2 text-muted"></i>
                                                                                             Edit</a></li>
                                                                                     <li class="dropdown-divider"></li>

@@ -5,13 +5,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Create Product</h4>
+                            <h4 class="mb-sm-0">Edit Product</h4>
 
                             <div class="page-title-right">
                                 <ol class="m-0 breadcrumb">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"
-                                            class="no-underline text-tertiary">Ecommerce</a></li>
-                                    <li class="breadcrumb-item active">Create Product</li>
+                                            class="no-underline text-tertiary">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Edit Product</li>
                                 </ol>
                             </div>
 
@@ -96,14 +96,33 @@
                                                 </div>
                                             </div>
                                         </div>
-                                      
+                                        <div>
+                                            <h5 class="mb-1 fs-14">Product Gallery</h5>
+                                            <p class="text-muted">Add Product Gallery Images.</p>
+
+                                            <div class="dropzone dz-clickable">
+
+                                                <div class="dz-message needsclick">
+                                                    <div class="mb-3">
+                                                        <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
+                                                    </div>
+
+                                                    <h5>Drop files here or click to upload.</h5>
+                                                </div>
+                                            </div>
+
+                                            <ul class="mb-0 list-unstyled" id="dropzone-preview">
+
+                                            </ul>
+                                            <!-- end dropzon-preview -->
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- end card -->
 
                                 <!-- end card -->
                                 <div class="mb-3 text-end">
-                                    <button type="submit" class="btn btn-success w-sm">Submit</button>
+                                    <button type="submit" class="btn btn-success w-sm">Update</button>
                                 </div>
                             </div>
                             <!-- end col -->
@@ -135,7 +154,7 @@
                                     </div>
                                     <div class="card-body">
                                         <p class="mb-2 text-muted"> <a href="#"
-                                                class="no-underline float-end">Add
+                                                class="float-end text-decoration-underline">Add
                                                 New</a>Select product category</p>
                                         <select class="form-select" id="choices-category-input"
                                             name="choices-category-input" data-choices=""
@@ -162,7 +181,7 @@
                                             <div class="flex-grow-1">
                                                 <input class="form-control" data-choices=""
                                                     data-choices-multiple-remove="true" placeholder="Enter tags"
-                                                    type="text" >
+                                                    type="text" value="Cotton">
                                             </div>
                                         </div>
                                     </div>
@@ -172,11 +191,11 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="mb-0 card-title">Product Price</h5>
+                                        <h5 class="mb-0 card-title">Product Short Description</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="mb-2 text-muted">Input the price of the product</p>
-                                        <input class="form-control" placeholder="Price of product"></input>
+                                        <p class="mb-2 text-muted">Add short description for product</p>
+                                        <textarea class="form-control" placeholder="Must enter minimum of a 100 characters" rows="3"></textarea>
                                     </div>
                                     <!-- end card body -->
                                 </div>
@@ -193,3 +212,4 @@
         </div>
     </div>
 </x-ad-layout>
+

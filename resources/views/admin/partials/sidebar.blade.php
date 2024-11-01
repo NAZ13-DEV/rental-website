@@ -34,7 +34,7 @@
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <ul class="nav nav-sm flex-column">
                     <ul class="nav nav-sm flex-column">
-                        <li class="nav-item"><a href="{{ route('admin.dashboard')}}" class="nav-link" data-key="t-products"><i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span></a></li>
+                        <li class="nav-item"><a href="{{ route('admin.dashboard')}}" class="nav-link" data-key="t-products"><i class="bi bi-house-door"></i> <span data-key="t-dashboards">Dashboards</span></a></li>
                         <li class="nav-item"><a href="{{ route('admin.products')}}" class="nav-link" data-key="t-products"> <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Products</span></a></li>
                         <li class="nav-item"><a href="{{ route('admin.create')}}" class="nav-link" data-key="t-create-product"> <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Create Product</span></a></li>
                         <li class="nav-item"><a href="{{ route('admin.orders')}}" class="nav-link" data-key="t-orders"> <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Orders</span></a></li>
