@@ -43,6 +43,7 @@
                                                     <option value="">Status</option>
                                                     <option value="Pending">Pending</option>
                                                     <option value="Delivered">Delivered</option>
+                                                    <option value="cancelled">cancelled</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -69,9 +70,6 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="py-3 nav-link Delivered" data-bs-toggle="tab" id="Delivered" href="#delivered" role="tab" aria-selected="false">
-                                                <i class="align-bottom ri-checkbox-circle-line me-1"></i> Delivered
-                                            </a>
                                         </li>
                                     </ul>
 
@@ -81,7 +79,6 @@
                                                 <tr class="text-uppercase">
                                                     <th scope="col" style="width: 25px;">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
                                                         </div>
                                                     </th>
                                                     <th class="sort" data-sort="id">Order ID</th>
@@ -97,7 +94,6 @@
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
                                                         </div>
                                                     </th>
                                                     <td class="id"><a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2101</a></td>

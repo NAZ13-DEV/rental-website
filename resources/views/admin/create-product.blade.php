@@ -96,7 +96,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                     </div>
                                 </div>
                                 <!-- end card -->
@@ -134,7 +134,7 @@
                                         <h5 class="mb-0 card-title">Product Categories</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="mb-2 text-muted"> <a href="#"
+                                        <p class="mb-2 text-muted"> <a href="{{ route("admin.addCategory")}}"
                                                 class="no-underline float-end">Add
                                                 New</a>Select product category</p>
                                         <select class="form-select" id="choices-category-input"

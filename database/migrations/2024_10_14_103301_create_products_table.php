@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->longText('description');
+            $table->string('tags');
+            $table->string('category');
+            $table->string('image')->after('description');
             $table->decimal('price', 8, 2);
             $table->integer('stock');
             $table->boolean('is_out_of_stock')->default(false);
