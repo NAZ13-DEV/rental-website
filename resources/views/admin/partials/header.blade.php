@@ -153,22 +153,21 @@
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-                            <img class="rounded-circle header-profile-user" src="/default/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <img class="rounded-circle header-profile-user" src="{{ $user->image ? $user->image : '/default/assets/images/users/user.png' }}" alt="Header Avatar">
                             <span class="text-start ms-xl-2">
-                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna Adame</span>
-                                <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ $user->name}}</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Admin</span>
                             </span>
                         </span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="page-header-user-dropdown">
                         <!-- item-->
-                        <h6 class="dropdown-header">Welcome Anna!</h6>
-                        <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
-                        <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                        <h6 class="dropdown-header">Welcome {{ $user->name}}!</h6>
+                        <a class="dropdown-item" href="{{ route('admin.profile')}}"><span class="mt-1 badge bg-success-subtle text-success float-end"></span><i class="align-middle mdi mdi-cog-outline text-muted fs-16 me-1"></i> <span class="align-middle">Profile</span></a>
                         <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button class="align-middle bg-none" data-key="t-logout" type="submit">
-                                <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                <i class="align-middle mdi mdi-logout text-muted fs-16 me-1"></i>
                                 <span>
                                     Log Out
                                 </span>

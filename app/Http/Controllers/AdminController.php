@@ -6,10 +6,13 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Location;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 // use Illuminate\Support\Facades\Password;
@@ -17,9 +20,118 @@ use RealRashid\SweetAlert\Facades\Alert;
 class AdminController extends Controller
 {
     //
+    public function profile(){
+        $user= Auth::user();
+        return view('admin.profile', compact('user'));
+    }
+    public function profileUpdate(Request $request)
+    {
+        try {
+            $user = Auth::user();
+    
+            // Validation rules
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
+                'phonenumber' => 'required|string|max:11',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:6144', // 6MB max
+            ]);
+    
+            // Updating user information
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->phonenumber = $request->phonenumber;
+    
+            // If image is uploaded, handle the upload
+            if ($request->hasFile('image')) {
+                // Delete the old image if it exists
+                if ($user->image) {
+                    Storage::disk('public')->delete(str_replace('/storage/', '', $user->image));
+                }
+    
+                // Store new image
+                $imagePath = $request->file('image')->store('profile_images', 'public');
+                $user->image = "/storage/" . $imagePath;
+            }
+    
+            // Save the user with new data
+            $user->save();
+    
+            Alert::success('Profile Updated', 'Your profile has been updated successfully.');
+            return redirect()->route('admin.profile');
+        } catch (\Exception $e) {
+            // Log the error message for debugging
+            Log::error("Profile Update Error: " . $e->getMessage());
+            return back()->withErrors(['error' => 'An unexpected error occurred while updating your profile. Please try again later.']);
+        }
+    }
+    
+    public function changePassword(Request $request)
+{
+    try {
+        // Validate input fields
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        // Check if the current password is correct
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'The current password is incorrect.']);
+        }
+
+        // Update the password
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        Alert::success('Password Changed', 'Your password has been changed successfully.');
+        return redirect()->route('admin.profile');
+
+    } catch (\Exception $e) {
+        // Log error for debugging
+        Log::error("Change Password Error: " . $e->getMessage());
+        return back()->withErrors(['error' => 'An unexpected error occurred while changing your password. Please try again later.']);
+    }
+}
+    
+    public function deleteAccount(Request $request)
+    {
+        try {
+            $request->validate([
+                'password' => 'required',
+            ]);
+    
+            $user = Auth::user();
+    
+            // Check if the password is correct
+            if (!Hash::check($request->password, $user->password)) {
+                return back()->withErrors(['password' => 'The password is incorrect.']);
+            }
+    
+            // Log the user out
+            Auth::logout();
+    
+            // Delete the user
+            $user->delete();
+    
+            Alert::success('Account Deleted', 'Your account has been deleted successfully.');
+            return redirect('/');
+        } catch (\Exception $e) {
+            // Log the error message for debugging
+            Log::error("Delete Account Error: " . $e->getMessage());
+            return back()->withErrors(['error' => 'An unexpected error occurred while deleting your account. Please try again later.']);
+        }
+    }
+    
+
+
     public function index()
     {
-        return view('admin.dashboard');
+        $user= Auth::user();
+        $customer= User::where('role', 'user')->get();
+        return view('admin.dashboard',compact('user','customer'));
     }
 
     public function orders()
@@ -34,7 +146,9 @@ class AdminController extends Controller
 
     public function customers()
     {
-        return view('admin.customers');
+
+        $users = User::where('role', 'user')->paginate(10);
+        return view('admin.customers',compact('users'));
     }
 
 

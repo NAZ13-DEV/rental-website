@@ -23,6 +23,6 @@ class AdLayout extends Component
     public function render(): View|Closure|string
     {
         $user = Auth::user();
-        return view('admin.layouts.ad');
+        return view('admin.layouts.ad',compact('user'));
     }
 }

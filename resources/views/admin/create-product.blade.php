@@ -14,52 +14,47 @@
                                     <li class="breadcrumb-item active">Create Product</li>
                                 </ol>
                             </div>
-
                         </div>
                     </div>
 
-                    <form id="createproduct-form" autocomplete="off" class="needs-validation" novalidate="">
+                    <!-- Display Success and Error Messages -->
+                    <div class="col-lg-12">
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <form id="createproduct-form" autocomplete="off" class="needs-validation" novalidate="" method="POST" action="{{ route('admin.store.product') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="mb-3">
                                             <label class="form-label" for="product-title-input">Product Title</label>
-                                            <input type="hidden" class="form-control" id="formAction" name="formAction"
-                                                value="add">
-                                            <input type="text" class="form-control d-none" id="product-id-input">
-                                            <input type="text" class="form-control" id="product-title-input"
-                                                value="" placeholder="Enter product title" required="">
-                                            <div class="invalid-feedback">Please Enter a product title.</div>
+                                            <input type="text" class="form-control" name="name" id="product-title-input" value="{{ old('name') }}" placeholder="Enter product title" required>
+                                            @error('name')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
-                                        <div>
+
+                                        <div class="mb-3">
                                             <label>Product Description</label>
-
-
-                                            <div class="ck ck-reset ck-editor ck-rounded-corners" role="application"
-                                                dir="ltr" lang="en"
-                                                aria-labelledby="ck-editor__label_eb369a3ab109b6bbbdf1333ff6702ae77">
-                                                <div class="ck ck-editor__top ck-reset_all" role="presentation">
-                                                    <div class="ck ck-sticky-panel">
-                                                        <div class="ck ck-sticky-panel__placeholder"
-                                                            style="display: none;"></div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="ck ck-editor__main" role="presentation">
-                                                    <div class="ck-blurred ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline"
-                                                        lang="en" dir="ltr" role="textbox"
-                                                        aria-label="Editor editing area: main"
-                                                        {{-- style="height: 200px; --}}
-                                                        ">
-                                                    <textarea name="" id="" cols="30" rows="10" class="col-lg-12"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <textarea name="description" class="form-control" rows="5" placeholder="Enter product description" required>{{ old('description') }}</textarea>
+                                            @error('description')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end card -->
 
                                 <div class="card">
                                     <div class="card-header">
@@ -71,125 +66,108 @@
                                             <p class="text-muted">Add Product main Image.</p>
                                             <div class="text-center">
                                                 <div class="position-relative d-inline-block">
-                                                    <div class="position-absolute top-100 start-100 translate-middle">
-                                                        <label for="product-image-input" class="mb-0"
-                                                            data-bs-toggle="tooltip" data-bs-placement="right"
-                                                            aria-label="Select Image"
-                                                            data-bs-original-title="Select Image">
-                                                            <div class="avatar-xs">
-                                                                <div
-                                                                    class="border cursor-pointer avatar-title bg-light rounded-circle text-muted">
-                                                                    <i class="ri-image-fill"></i>
-                                                                </div>
+                                                    <label for="product-image-input" class="mb-0">
+                                                        <div class="avatar-xs">
+                                                            <div class="border cursor-pointer avatar-title bg-light rounded-circle text-muted">
+                                                                <i class="ri-image-fill"></i>
                                                             </div>
-                                                        </label>
-                                                        <input class="form-control d-none" value=""
-                                                            id="product-image-input" type="file"
-                                                            accept="image/png, image/gif, image/jpeg">
-                                                    </div>
-                                                    <div class="avatar-lg">
-                                                        <div class="rounded avatar-title bg-light">
-                                                            <img src="" id="product-img"
-                                                                class="h-auto avatar-md">
                                                         </div>
+                                                    </label>
+                                                    <input class="form-control d-none" name="image" id="product-image-input" type="file" accept="image/png, image/gif, image/jpeg" required>
+                                                    <div class="mt-3 w-100">
+                                                        <img src="" id="product-img" class="h-auto rounded avatar-md" alt="Product Image Preview">
                                                     </div>
                                                 </div>
                                             </div>
+                                            @error('image')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
-
                                     </div>
                                 </div>
-                                <!-- end card -->
 
-                                <!-- end card -->
                                 <div class="mb-3 text-end">
                                     <button type="submit" class="btn btn-success w-sm">Submit</button>
                                 </div>
                             </div>
-                            <!-- end col -->
 
                             <div class="col-lg-4">
-
-                                <!-- end card -->
-
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5 class="mb-0 card-title">Publish Schedule</h5>
+                                        <h5 class="mb-0 card-title">Product Stock</h5>
                                     </div>
-                                    <!-- end card body -->
                                     <div class="card-body">
-                                        <div>
-                                            <label for="datepicker-publish-input" class="form-label">Publish Date
-                                                &amp; Time</label>
-                                            <input type="text" id="datepicker-publish-input" class="form-control"
-                                                placeholder="Enter publish date" data-provider="flatpickr"
-                                                data-date-format="d.m.y" data-enable-time="">
+                                        <div class="mb-3">
+                                            <label for="product-stock-input" class="form-label">Product Total Stock</label>
+                                            <input type="number" name="stock" id="product-stock-input" class="form-control" value="{{ old('stock') }}" placeholder="Enter Stock Unit" min="0" required>
+                                            @error('stock')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
-                                <!-- end card -->
 
                                 <div class="card">
                                     <div class="card-header">
                                         <h5 class="mb-0 card-title">Product Categories</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="mb-2 text-muted"> <a href="{{ route("admin.addCategory")}}"
-                                                class="no-underline float-end">Add
-                                                New</a>Select product category</p>
-                                        <select class="form-select" id="choices-category-input"
-                                            name="choices-category-input" data-choices=""
-                                            data-choices-search-false="">
-                                            <option value="Appliances">Appliances</option>
-                                            <option value="Automotive Accessories">Automotive Accessories</option>
-                                            <option value="Electronics">Electronics</option>
-                                            <option value="Fashion">Fashion</option>
-                                            <option value="Furniture">Furniture</option>
-                                            <option value="Grocery">Grocery</option>
-                                            <option value="Kids">Kids</option>
-                                            <option value="Watches">Watches</option>
+                                        <p class="mb-2 text-muted">
+                                            <a href="{{ route('admin.addCategory') }}" class="no-underline float-end">Add New</a>
+                                            Select product category
+                                        </p>
+                                        <select name="category_id" id="category" class="form-control">
+                                            <option value="">Select a Category</option>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}" {{ old('category_id', $product->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
                                         </select>
+                                        @error('category')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <!-- end card body -->
                                 </div>
-                                <!-- end card -->
+
                                 <div class="card">
                                     <div class="card-header">
                                         <h5 class="mb-0 card-title">Product Tags</h5>
                                     </div>
                                     <div class="card-body">
-                                        <div class="gap-3 hstack align-items-start">
-                                            <div class="flex-grow-1">
-                                                <input class="form-control" data-choices=""
-                                                    data-choices-multiple-remove="true" placeholder="Enter tags"
-                                                    type="text" >
-                                            </div>
-                                        </div>
+                                        <input class="form-control" name="tags" placeholder="Enter tags" type="text" value="{{ old('tags') }}" required>
+                                        @error('tags')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <!-- end card body -->
                                 </div>
-                                <!-- end card -->
 
                                 <div class="card">
                                     <div class="card-header">
                                         <h5 class="mb-0 card-title">Product Price</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p class="mb-2 text-muted">Input the price of the product</p>
-                                        <input class="form-control" placeholder="Price of product"></input>
+                                        <input class="form-control" name="price" placeholder="Price of product" type="number" step="0.01" min="0" value="{{ old('price') }}" required>
+                                        @error('price')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <!-- end card body -->
                                 </div>
-                                <!-- end card -->
-
                             </div>
-                            <!-- end col -->
                         </div>
-                        <!-- end row -->
-
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Image Preview Script -->
+    <script>
+        document.getElementById("product-image-input").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                document.getElementById("product-img").src = URL.createObjectURL(file);
+            }
+        });
+    </script>
 </x-ad-layout>

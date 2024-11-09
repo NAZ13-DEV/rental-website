@@ -12,21 +12,21 @@
                                 <div class="col-12">
                                     <div class="d-flex align-items-lg-center flex-lg-row flex-column">
                                         <div class="flex-grow-1">
-                                            <h4 class="mb-1 fs-16">Good Morning, Anna!</h4>
+                                            <h4 class="mb-1 fs-16">Good Morning, {{ $user->name}}!</h4>
                                             <p class="mb-0 text-muted">Here's what's happening with your store today.</p>
                                         </div>
                                         <div class="mt-3 mt-lg-0">
                                             <form action="javascript:void(0);">
                                                 <div class="mb-0 row g-3 align-items-center">
                                                     <div class="col-sm-auto">
-                                                        
+
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-auto">
                                                         <button type="button" class="btn btn-soft-success"><i class="align-middle ri-add-circle-line me-1"></i> Add Product</button>
                                                     </div>
                                                     <!--end col-->
-                                                   
+
                                                     <!--end col-->
                                                 </div>
                                                 <!--end row-->
@@ -56,7 +56,7 @@
                                             <div class="mt-4 d-flex align-items-end justify-content-between">
                                                 <div>
                                                     <h4 class="mb-4 fs-22 fw-semibold ff-secondary">$<span class="counter-value" data-target="559.25">0</span>k </h4>
-                                                    <a href="" class="text-decoration-underline hidden">View net earnings</a>
+                                                    <a href="" class="hidden text-decoration-underline">View net earnings</a>
                                                     <br>
                                                 </div>
                                                 <div class="flex-shrink-0 avatar-sm">
@@ -114,8 +114,8 @@
                                             </div>
                                             <div class="mt-4 d-flex align-items-end justify-content-between">
                                                 <div>
-                                                    <h4 class="mb-4 fs-22 fw-semibold ff-secondary"><span class="counter-value" data-target="183.35">0</span>M </h4>
-                                                    <a href="" class="text-decoration-underline">See details</a>
+                                                    <h4 class="mb-4 fs-22 fw-semibold ff-secondary"><span class="counter-value" data-target="{{ count($customer)}}"></span> </h4>
+                                                    <a href="{{ route("admin.customers")}}" class="text-decoration-underline">See details</a>
                                                 </div>
                                                 <div class="flex-shrink-0 avatar-sm">
                                                     <span class="rounded avatar-title bg-warning-subtle fs-3">
@@ -131,14 +131,14 @@
                             </div> <!-- end row-->
 
                         <div class="row">
-                            
 
-                           
+
+
                                 <!-- end col -->
                             </div>
 
                             <div class="row">
-                                
+
 
                                 <!-- .col-->
                             </div> <!-- end row-->
@@ -150,7 +150,7 @@
                                     <div class="card">
                                         <div class="card-header align-items-center d-flex">
                                             <h4 class="mb-0 card-title flex-grow-1">Recent Orders</h4>
-                                       
+
                                         </div><!-- end card header -->
 
                                         <div class="card-body">

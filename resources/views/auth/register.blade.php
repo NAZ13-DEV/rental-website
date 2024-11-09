@@ -22,6 +22,12 @@
             <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
+        <!-- phonenumber -->
+        <div class="mt-4">
+            <x-input-label for="phonenumber" :value="__('Phone Number')" />
+            <x-text-input id="phonenumber" class="block w-full mt-1" type="text" name="phonenumber" :value="old('phonenumber')" required autocomplete="phonenumber" />
+            <x-input-error :messages="$errors->get('phonenumber')" class="mt-2" />
+        </div>
 
         <!-- Password -->
         <div class="mt-4">

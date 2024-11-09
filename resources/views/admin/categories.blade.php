@@ -9,7 +9,7 @@
 
                             <div class="page-title-right">
                                 <ol class="m-0 breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}" class="no-underline">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active">Categories</li>
                                 </ol>

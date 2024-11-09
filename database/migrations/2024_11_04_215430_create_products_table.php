@@ -9,18 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description');
-            $table->string('tags');
-            $table->string('category');
-            $table->string('image')->after('description');
-            $table->decimal('price', 8, 2);
-            $table->integer('stock');
-            $table->boolean('is_out_of_stock')->default(false);
+            $table->longText('description')->nullable();
+            $table->string('tags')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('image')->nullable();
+            $table->decimal('price', 10, 2);
+            $table->integer('stock')->default(0); // Set a default value for stock
             $table->timestamps();
         });
     }
@@ -28,7 +27,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('products');
     }
