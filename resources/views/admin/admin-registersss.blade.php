@@ -1,5 +1,7 @@
+
 {{-- <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <h1 class="m-5">Admin Registration</h1>
+    <form method="POST" action="{{ route('admin.register.post') }}">
         @csrf
 
         <!-- Name -->
@@ -22,11 +24,13 @@
             <x-text-input id="username" class="block w-full mt-1" type="text" name="username" :value="old('username')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('username')" class="mt-2" />
         </div>
-        <!-- phonenumber -->
+
+        <!-- role -->
         <div class="mt-4">
-            <x-input-label for="phonenumber" :value="__('Phone Number')" />
-            <x-text-input id="phonenumber" class="block w-full mt-1" type="text" name="phonenumber" :value="old('phonenumber')" required autocomplete="phonenumber" />
-            <x-input-error :messages="$errors->get('phonenumber')" class="mt-2" />
+            <x-input-label for="username" :value="__('Role')" />
+            <x-text-input id="role" class="block w-full mt-1" type="hidden" name="role" value="admin" required autocomplete="role" />
+
+            <x-input-error :messages="$errors->get('role')" class="mt-2" />
         </div>
 
         <!-- Password -->
@@ -62,7 +66,13 @@
             </x-primary-button>
         </div>
     </form>
+
+
+
+
 </x-guest-layout> --}}
+
+
 
 
 <x-us-layout>
@@ -80,7 +90,7 @@
                     </div>
                 </nav>
 
-                <h1>Register</h1>
+                <h1>Admin Registration</h1>
             </div>
         </div>
 
@@ -93,7 +103,8 @@
                                 <h2 class="title">Register</h2>
                             </div>
 
-                            <form action="{{ route('register') }}" method="POST">
+                            <form action="{{ route('admin.registersss') }}" method="POST">
+
                                 @csrf
 
                                 <div class="form-group">
@@ -147,6 +158,13 @@
                                         autocomplete="username"
                                     />
                                     <x-input-error :messages="$errors->get('username')" class="mt-2 text-2xl" />
+                                </div>
+
+                                <div class="mt-4">
+                                    {{-- <x-input-label for="username" :value="__('Role')" /> --}}
+                                    <x-text-input id="role" class="block w-full mt-1" type="hidden" name="role" value="admin" required autocomplete="role" />
+
+                                    {{-- <x-input-error :messages="$errors->get('role')" class="mt-2" /> --}}
                                 </div>
 
                                 <div class="form-group">

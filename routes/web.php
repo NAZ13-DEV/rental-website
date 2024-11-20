@@ -1,18 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::post("/admin-register");
 
-Route::get('/admin/register', action: [AdminController::class, 'showAdminRegistrationForm'])->name('admin.register');
-Route::post('/admin/register', [AdminController::class, 'adminRegister'])->name('admin.register.post');
+Route::get('/user/forgot-password', [UserController::class, 'forgotPassword'])->name('user.forgot-password');
+Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
+
+
+Route::get('/admin/registersss', action: [AdminController::class, 'showAdminRegistrationForm'])->name('admin.register');
+Route::post('/admin/registersss', [AdminController::class, 'adminRegister'])->name('admin.registersss');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -60,9 +64,12 @@ Route::middleware(['auth','role:admin'])->group( function(){
     Route::get('/admin/deleteProduct/{id}', action: [ProductController::class, 'deleteProduct'])->name(name: 'admin.deleteProduct');
     Route::get('/admin/{product}/edit-product', [ProductController::class, 'edit'])->name('admin.updateProduct');
     Route::put('/admin/updateProduct/{product}', [ProductController::class, 'update'])->name('admin.update');
+});
 
 
 
+Route::middleware(['role:user','auth'])->group(function(){
+    Route::get('/user/dashboard', [UserController::class, 'userDashboard'])->name('user.dashboard');
 });
 
 

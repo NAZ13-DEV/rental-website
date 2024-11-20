@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +44,94 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+
+
+<x-us-layout>
+    <main class="main">
+        <div class="page-header">
+            <div class="container d-flex flex-column align-items-center">
+                <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                    <div class="container">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="" class="no-underline">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Login
+                            </li>
+                        </ol>
+                    </div>
+                </nav>
+
+                <h1>Login</h1>
+            </div>
+        </div>
+
+
+        <div class="container login-container">
+            <div class="row">
+                <div class="mx-auto col-lg-12">
+                    <div class="row">
+                        <div class="mx-auto col-md-6">
+                            <div class="mb-1 heading">
+                                <h2 class="title">Login</h2>
+                            </div>
+
+                            <form action="{{ route('login') }}" method="POST">
+                                @csrf
+                                <label for="login-email">
+                                    Username or email address
+                                    <span class="required">*</span>
+                                </label>
+                                <x-text-input id="password" type="text" name="login" required
+                                    autocomplete="current-password" class="form-input form-wide" id="login-password" />
+                                <x-input-error :messages="$errors->get('password')" class="mt-2 text-xl" />
+
+                                <label for="login-password">
+                                    Password
+                                    <span class="required">*</span>
+                                </label>
+                                <x-text-input class="form-input form-wide" id="login-password" type="password"
+                                    name="password" required autocomplete="current-password" />
+
+                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+                                <div class="block mt-4">
+                                    <label for="remember_me" class="inline-flex items-center">
+                                        <input id="remember_me" type="checkbox"
+                                            class="text-indigo-600 border-gray-300 rounded shadow-sm focus:ring-indigo-500"
+                                            name="remember">
+                                        <span class="text-gray-600 text-xxl ms-2">{{ __('Remember me') }}</span>
+                                    </label>
+                                </div>
+
+                                <div class="flex items-center justify-between mt-4">
+                                    <a href="{{ route('password.request') }}"
+                                        class="no-underline forget-password text-primary form-footer-right">Forgot
+                                        Password?</a>
+                                    <button type="submit" class="py-2 mx-5 btn btn-lg btn-primary form-footer-right font-weight-normal text-transform-none">
+                                        LOGIN
+                                    </button>
+                                </div>
+
+
+                        </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </main>
+</x-us-layout>

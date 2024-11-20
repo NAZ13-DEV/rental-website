@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         try {
             $user = Auth::user();
-    
+
             // Validation rules
             $request->validate([
                 'name' => 'required|string|max:255',
@@ -36,27 +36,27 @@ class AdminController extends Controller
                 'phonenumber' => 'required|string|max:11',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:6144', // 6MB max
             ]);
-    
+
             // Updating user information
             $user->name = $request->name;
             $user->email = $request->email;
             $user->phonenumber = $request->phonenumber;
-    
+
             // If image is uploaded, handle the upload
             if ($request->hasFile('image')) {
                 // Delete the old image if it exists
                 if ($user->image) {
                     Storage::disk('public')->delete(str_replace('/storage/', '', $user->image));
                 }
-    
+
                 // Store new image
                 $imagePath = $request->file('image')->store('profile_images', 'public');
                 $user->image = "/storage/" . $imagePath;
             }
-    
+
             // Save the user with new data
             $user->save();
-    
+
             Alert::success('Profile Updated', 'Your profile has been updated successfully.');
             return redirect()->route('admin.profile');
         } catch (\Exception $e) {
@@ -65,7 +65,7 @@ class AdminController extends Controller
             return back()->withErrors(['error' => 'An unexpected error occurred while updating your profile. Please try again later.']);
         }
     }
-    
+
     public function changePassword(Request $request)
 {
     try {
@@ -95,27 +95,27 @@ class AdminController extends Controller
         return back()->withErrors(['error' => 'An unexpected error occurred while changing your password. Please try again later.']);
     }
 }
-    
+
     public function deleteAccount(Request $request)
     {
         try {
             $request->validate([
                 'password' => 'required',
             ]);
-    
+
             $user = Auth::user();
-    
+
             // Check if the password is correct
             if (!Hash::check($request->password, $user->password)) {
                 return back()->withErrors(['password' => 'The password is incorrect.']);
             }
-    
+
             // Log the user out
             Auth::logout();
-    
+
             // Delete the user
             $user->delete();
-    
+
             Alert::success('Account Deleted', 'Your account has been deleted successfully.');
             return redirect('/');
         } catch (\Exception $e) {
@@ -124,7 +124,7 @@ class AdminController extends Controller
             return back()->withErrors(['error' => 'An unexpected error occurred while deleting your account. Please try again later.']);
         }
     }
-    
+
 
 
     public function index()
@@ -158,7 +158,7 @@ class AdminController extends Controller
 
     public function showAdminRegistrationForm()
     {
-        return view(view: 'admin.admin-register'); // Render the Blade file for admin registration
+        return view(view: 'admin.admin-registersss'); // Render the Blade file for admin registration
     }
 
 
