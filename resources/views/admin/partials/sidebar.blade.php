@@ -1,24 +1,36 @@
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
-    <div class="navbar-brand-box">
-        <!-- Dark Logo-->
-        <a href="{{ route('admin.dashboard') }}" class="font-bold text-white logo logo-dark text-decoration-none fs-5">
-            <span class="logo-sm">
+    <div class="flex justify-center h-20 navbar-brand-box">
+       <!-- Dark Logo -->
+<a href="{{ route('admin.dashboard') }}"
+class="font-bold text-white logo logo-dark text-decoration-none fs-5">
+ <span class="logo-sm">
+     <img src="/default/assets/images/QTC_LOGO_PLAIN.png"
+          class="w-20"
+          alt="QTC Logo Small">
+ </span>
+ <span class="logo-lg">
+     <img src="/default/assets/images/QTC_LOGO_PLAIN.png"
+          class="w-20"
+          alt="QTC Logo Large">
+ </span>
+</a>
 
-            </span>
-            <span class="logo-lg">
-                QTC LIMITED
-            </span>
-        </a>
-        <!-- Light Logo-->
-        <a href="{{ route('admin.dashboard') }}" class="font-bold text-white logo logo-light text-decoration-none fs-5">
-            <span class="logo-sm">
+<!-- Light Logo -->
+<a href="{{ route('admin.dashboard') }}"
+class="mb-5 font-bold text-white logo logo-light text-decoration-none fs-5">
+ <span class="logo-sm">
+     <img src="/default/assets/images/QTC_LOGO_PLAIN.png"
+          class="w-20"
+          alt="QTC Logo Small">
+ </span>
+ <span class="logo-lg">
+     <img src="/default/assets/images/QTC_LOGO_PLAIN.png"
+          class="w-20"
+          alt="QTC Logo Large">
+ </span>
+</a>
 
-            </span>
-            <span class="logo-lg">
-                QTC LIMITED
-            </span>
-        </a>
         <button type="button" class="p-0 btn btn-sm fs-20 header-item float-end btn-vertical-sm-hover"
             id="vertical-hover">
             <i class="ri-record-circle-line"></i>
@@ -30,7 +42,7 @@
 
             <div id="two-column-menu">
             </div>
-            <ul class="list-none navbar-nav" id="navbar-nav">
+            <ul class="mt-2 list-none navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <ul class="list-none nav nav-sm flex-column">
                     <ul class="list-none nav nav-sm flex-column ">

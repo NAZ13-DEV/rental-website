@@ -21,6 +21,6 @@ class HmLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.hm-layout');
+        return view('home.layouts.hm');
     }
 }

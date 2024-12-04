@@ -23,7 +23,7 @@
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-auto">
-                                                        <button type="button" class="btn btn-soft-success"><i class="align-middle ri-add-circle-line me-1"></i> Add Product</button>
+                                                        <a href="{{ route("admin.create") }}" class="btn btn-primary"><i class="align-middle ri-add-circle-line me-1"></i> Add Product</a>
                                                     </div>
                                                     <!--end col-->
 
@@ -86,7 +86,7 @@
                                             <div class="mt-4 d-flex align-items-end justify-content-between">
                                                 <div>
                                                     <h4 class="mb-4 fs-22 fw-semibold ff-secondary"><span class="counter-value" data-target="36894">0</span></h4>
-                                                    <a href="" class="text-decoration-underline">View all orders</a>
+                                                    <a href="{{ route("admin.orders")}}" class="text-decoration-underline">View all orders</a>
                                                 </div>
                                                 <div class="flex-shrink-0 avatar-sm">
                                                     <span class="rounded avatar-title bg-info-subtle fs-3">

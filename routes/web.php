@@ -6,10 +6,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::get('/user/forgot-password', [UserController::class, 'forgotPassword'])->name('user.forgot-password');
 Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
@@ -72,6 +73,7 @@ Route::middleware(['role:user','auth'])->group(function(){
     Route::get('/user/dashboard', [UserController::class, 'userDashboard'])->name('user.dashboard');
 });
 
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 
 
