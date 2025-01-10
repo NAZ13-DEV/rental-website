@@ -26,7 +26,7 @@
 
         <div class="footer-middle">
             <div class="row">
-                <div class="col-lg-6 col-xl-4">
+                <div class="col-lg-6 col-xl-6">
                     <div class="widget">
                         <h4 class="widget-title">Contact Info</h4>
 
@@ -34,71 +34,57 @@
                             <div class="col-sm-6">
                                 <div class="contact-widget">
                                     <h4 class="widget-title">ADDRESS:</h4>
-                                    <a href="#">1234 Street Name, City, England</a>
+                                    <a>No. 1 Ugbolu Road Off Over & Over Bus Stop Ogbeosadi, Okpanam Road Delta State, Nigeria.</a>
                                 </div>
                             </div>
 
                             <div class="col-sm-6 pl-xl-0">
                                 <div class="contact-widget">
                                     <h4 class="widget-title">PHONE:</h4>
-                                    <a href="#">(123) 456-7890</a>
+                                <a href="tel:+2348023514545" class="no-underline">+234 802 351 4545</a>
+
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="contact-widget email">
                                     <h4 class="widget-title">EMAIL:</h4>
-                                    <a href="https://portotheme.com/cdn-cgi/l/email-protection#dbb6bab2b79bbea3bab6abb7bef5b8b4b6"><span class="__cf_email__" data-cfemail="81ece0e8edc1e4f9e0ecf1ede4afe2eeec">[email&#160;protected]</span></a>
+                                    <a href="mailto:Cnwayalani@gmail.com" class="no-underline">Cnwayalani@gmail.com</a>
                                 </div>
                             </div>
 
                             <div class="col-sm-6 pl-xl-0">
                                 <div class="contact-widget">
                                     <h4 class="widget-title">WORKING DAYS/HOURS:</h4>
-                                    <a href="#">Mon - Sun / 9:00 AM - 8:00 PM</a>
+                                    <a> Mon - Sat / 8:00 AM - 6:00 PM</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3 col-xl-4">
+                <div class="col-sm-6 col-lg-6 col-xl-6">
                     <div class="widget">
                         <h4 class="widget-title">My Account</h4>
-                        <div class="links link-parts row">
-                            <ul class="mb-0 link-part col-xl-4">
+                        <div class="links link-parts row ">
+                            <ul class="mb-0 link-part col-xl-6">
                                 <li><a href="demo3-about.html">About Us</a></li>
                                 <li><a href="demo3-contact.html">Contact Us</a></li>
                                 <li><a href="dashboard.html">My Account</a></li>
                             </ul>
-                            <ul class="link-part col-xl-8">
-                                <li class="pl-xl-2 ml-xl-1"><a href="#">Orders History</a></li>
-                                <li class="pl-xl-2 ml-xl-1"><a href="#">Advanced Search</a></li>
+                            <ul class="link-part col-xl-6">
+                                <li class="pl-xl-2 ml-xl-1"><a href="">Orders History</a></li>
+                                <li class="pl-xl-2 ml-xl-1"><a href="">Advanced Search</a></li>
                             </ul>
                         </div>
                     </div><!-- End .widget -->
                 </div>
-                <div class="col-sm-6 col-lg-3 col-xl-4">
-                    <div class="widget">
-                        <h4 class="widget-title">Main Features</h4>
-                        <div class="links link-parts row">
-                            <ul class="mb-0 link-part col-xl-6">
-                                <li><a href="#">Super Fast HTML Template</a></li>
-                                <li><a href="#">1st Fully working Ajax Theme</a></li>
-                                <li><a href="#">33 Unique Shop Layouts</a></li>
-                            </ul>
-                            <ul class="link-part col-xl-6 pl-xl-2">
-                                <li><a href="#">Powerful Admin Panel</a></li>
-                                <li><a href="#">Mobile &amp; Retina Optimized</a></li>
-                            </ul>
-                        </div>
-                    </div><!-- End .widget -->
-                </div>
+
             </div>
         </div>
 
         <div class="footer-bottom d-sm-flex align-items-center">
             <div class="footer-left">
-                <span class="footer-copyright">Porto eCommerce. © 2021. All Rights Reserved</span>
+                <span class="footer-copyright">© QTC LIMITED {{ date('Y') }} . All Rights Reserved</span>
             </div>
 
             <div class="mt-1 ml-auto footer-right mt-sm-0">

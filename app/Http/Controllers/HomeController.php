@@ -13,8 +13,16 @@ class HomeController extends Controller
     {
         return view("index");
     }
+    public function aboutUs()
+    {
+        return view("home.aboutUs");
+    }
+    public function contactUs()
+    {
+        return view(view: "home.contactUs");
+    }
 
-    
+
 
 
     /**

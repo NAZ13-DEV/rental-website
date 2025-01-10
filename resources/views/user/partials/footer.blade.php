@@ -7,7 +7,7 @@
                         <h4 class="widget-title">Contact Info</h4>
                         <ul class="contact-info">
                             <li>
-                                <span class="contact-info-label">Address:</span>123 Street Name, City, England
+                                <span class="contact-info-label">Address:</span>No. 1 Ugbolu Road Off Over & Over Bus Stop Ogbeosadi, Okpanam Road Delta State, Nigeria.
                             </li>
                             <li>
                                 <span class="contact-info-label">Phone:</span>
@@ -25,11 +25,11 @@
                             </li>
                         </ul>
                         <div class="social-icons">
-                            <a href="#" class="social-icon social-facebook icon-facebook no-underline" target="_blank"
+                            <a href="#" class="no-underline social-icon social-facebook icon-facebook" target="_blank"
                                 title="Facebook"></a>
-                            <a href="#" class="social-icon social-twitter icon-twitter no-underline" target="_blank"
+                            <a href="#" class="no-underline social-icon social-twitter icon-twitter" target="_blank"
                                 title="Twitter"></a>
-                            <a href="#" class="social-icon social-instagram icon-instagram no-underline" target="_blank"
+                            <a href="#" class="no-underline social-icon social-instagram icon-instagram" target="_blank"
                                 title="Instagram"></a>
                         </div><!-- End .social-icons -->
                     </div><!-- End .widget -->

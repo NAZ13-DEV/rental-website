@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    a {
+        @apply no-underline;
+    }
+}
+
+sectionss {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+

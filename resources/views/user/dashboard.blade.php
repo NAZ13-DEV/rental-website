@@ -5,8 +5,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-nav">
                     <div class="container">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="demo4.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="category.html">Shop</a></li>
+                            <li class="breadcrumb-item"><a href="{{route("home.index")}}" class="no-underline">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 My Account
                             </li>

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 12:43:01 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Porto - Bootstrap eCommerce Template</title>
+    <title>QTC LIMITED</title>
 
     <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Porto - Bootstrap eCommerce Template">
+    <meta name="description" content="QTC LIMITED">
     <meta name="author" content="SW-THEMES">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/template/assets/images/icons/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/default/assets/images/QTC_LOGO_PLAIN.png">
 
     <script>
         WebFontConfig = {
@@ -32,14 +30,25 @@
 
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="/template/assets/css/bootstrap.min.css">
+    <!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="/template/assets/css/demo3.min.css">
     <link rel="stylesheet" type="text/css" href="/template/assets/vendor/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/template/assets/vendor/simple-line-icons/css/simple-line-icons.min.css">
+    @vite(['resources/css/app.css','resources/css/bootstrap.min.css', 'resources/js/app.js', 'resources/js/bootstrap.bundle.min.js'])
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+
 </head>
 
-<body class="full-screen-slider">
+<body class="full-screen-slider no-underline">
     <div class="page-wrapper">
 
         @include('home.partials.header');
@@ -72,7 +81,7 @@
             <span class="mobile-menu-close"><i class="fa fa-times"></i></span>
             <nav class="mobile-nav">
                 <ul class="mobile-menu">
-                    <li><a href="demo3.html">Home</a></li>
+                    <li><a href="{{route("home.index")}}">Home</a></li>
                     <li>
                         <a href="demo3-shop.html">Categories</a>
                         <ul>
@@ -215,18 +224,18 @@
 
     <div class="sticky-navbar">
         <div class="sticky-info">
-            <a href="demo3.html">
+            <a href="{{route("home.index")}}">
                 <i class="icon-home"></i>Home
             </a>
         </div>
         <div class="sticky-info">
-            <a href="demo3-shop.html" class="">
+            <a href="" class="">
                 <i class="icon-bars"></i>Categories
             </a>
         </div>
         <div class="sticky-info">
-            <a href="wishlist.html" class="">
-                <i class="icon-wishlist-2"></i>Wishlist
+            <a href="" class="">
+                <i class="icon-wishlist-2"></i>Cart
             </a>
         </div>
         <div class="sticky-info">
@@ -242,7 +251,7 @@
             </a>
         </div>
     </div>
-{{-- 
+{{--
     <div class="newsletter-popup mfp-hide bg-img" id="newsletter-popup-form"
         style="background: #f1f1f1 no-repeat center/cover url(/template/assets/images/newsletter_popup_bg.jpg)">
         <div class="newsletter-popup-content">

@@ -114,6 +114,10 @@
                                     </button>
                                 </div>
 
+                                <div class="flex items-center justify-between mt-4">
+                                    <p class="text-[14px]">If you don't have an account please <a href="{{route('register')}}" class="d-inline"><span> register today</span></a></p>
+                                </div>
+
 
                         </div>
                         </form>

@@ -2,35 +2,31 @@
 
     <main class="main">
         <div class="home-slider slide-animate owl-carousel owl-theme show-nav-hover nav-big">
-            <div class="home-slide home-slide1 banner d-flex align-items-center">
-                <img class="slide-bg" src="/template/assets/images/demoes/demo3/slider/slide1.jpg"
-                    style="background-color: #ecc;" alt="home banner">
-                <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
-                    <h2>Winter Fashion Trends</h2>
-                    <h3 class="mb-0 text-uppercase">Get up to 30% off</h3>
-                    <h4 class="m-b-4">on Jackets</h4>
+            <div class="mt-4 home-slide home-slide1 banner d-flex align-items-center">
+                <img class="slide-bg " src="/default/assets/images/gradient.jpg" style="background-color: #ecc;"
+                    alt="home banner">
+                <div class="sm:w-full banner-layer appear-animate col-lg-5 col-sm-12 col-md-9"
+                    data-animation-name="fadeInUpShorter">
+                    <h1 class="md:text-[35px] lg:text-[48px] text-[30px] text-[#ffffff] mb-4 md:mb-1">
+                        Unforgettable Events,
+                        <span class="text-[#FF5353]">Expertly </span>
+                        Planned
+                    </h1>
 
-                    <h5 class="text-uppercase">Starting at<span
-                            class="coupon-sale-text"><sup>$</sup>199<sup>99</sup></span></h5>
-                    <a href="demo3-shop.html" class="btn btn-dark btn-xl" role="button">Shop Now</a>
+                    <p class="md:text-[20px] text-[#ffffff] text-4xl mb-5 ">
+                        Welcome to QTC EVENTS/RENTALS, where we make your dreams a reality.
+                        From weddings to seminars, our team crafts perfect, stress-free events tailored to you.
+                    </p>
+
+                    <a href="{{ route('register') }}"
+                        class="bg-[#751515] text-white px-8 py-4 text-xl sm:text-2xl lg:text-3xl hover:bg-[#a02727]  transition duration-300 rounded-xl w-full max-w-xs mx-auto">
+                        Register Now
+                    </a>
+
+
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
 
-            <div class="home-slide home-slide2 banner d-flex align-items-center">
-                <img class="slide-bg" src="/template/assets/images/demoes/demo3/slider/slide2.jpg"
-                    style="background-color: #bfcec9;" alt="home banner">
-                <div class="banner-layer appear-animate" data-animation-name="fadeInUpShorter">
-                    <h2>New Season Hats </h2>
-                    <h3 class="mb-0 text-uppercase rotated-upto-text"><small>Up to</small>20% off</h3>
-
-                    <hr class="mb-1 short-thick-divider mb-sm-0">
-
-                    <h5 class="mb-2 text-uppercase d-inline-block mb-sm-0">Starting at <span>$<em>19</em>99</span>
-                    </h5>
-                    <a href="demo3-shop.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i
-                            class="fas fa-long-arrow-alt-right"></i></a>
-                </div><!-- End .banner-layer -->
-            </div><!-- End .home-slide -->
         </div><!-- End .home-slider -->
 
         <section class="container">
@@ -41,8 +37,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-1.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-1.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Sunglasses</h3>
@@ -53,8 +49,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-2.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-2.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Bags</h3>
@@ -65,8 +61,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-3.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-3.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Electronics</h3>
@@ -77,8 +73,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-4.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-4.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Fashion</h3>
@@ -89,8 +85,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-5.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-5.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Headphone</h3>
@@ -101,8 +97,8 @@
                 <div class="product-category">
                     <a href="demo3-shop.html">
                         <figure>
-                            <img src="/template/assets/images/demoes/demo3/categories/category-6.jpg" width="273" height="273"
-                                alt="category" />
+                            <img src="/template/assets/images/demoes/demo3/categories/category-6.jpg" width="273"
+                                height="273" alt="category" />
                         </figure>
                         <div class="category-content">
                             <h3>Shoes</h3>
@@ -221,8 +217,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-2.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-2-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-2-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="label-group">
                                 <div class="product-label label-hot">HOT</div>
@@ -302,8 +298,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-4.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-4-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-4-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="btn-icon-group">
                                 <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
@@ -379,8 +375,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-6.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-6-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-6-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="label-group">
                                 <span class="product-label label-hot">HOT</span>
@@ -459,8 +455,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-8.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-8-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-8-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="btn-icon-group">
                                 <a href="#" class="btn-icon btn-add-cart product-type-simple"><i
@@ -498,8 +494,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-9.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-9-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-9-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="btn-icon-group">
                                 <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
@@ -612,8 +608,8 @@
                             <a href="demo3-product.html">
                                 <img src="/template/assets/images/demoes/demo3/products/product-12.jpg" width="273"
                                     height="273" alt="productr" />
-                                <img src="/template/assets/images/demoes/demo3/products/product-12-2.jpg" width="273"
-                                    height="273" alt="productr" />
+                                <img src="/template/assets/images/demoes/demo3/products/product-12-2.jpg"
+                                    width="273" height="273" alt="productr" />
                             </a>
                             <div class="btn-icon-group">
                                 <a href="demo3-product.html" class="btn-icon btn-add-cart"><i
@@ -657,11 +653,13 @@
 
                         <div class="p-0 feature-box-content">
                             <h3 class="text-uppercase">Customer Support</h3>
-                            <h5>Need Assistence?</h5>
+                            <h5>Need Assistance?</h5>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna,
-                                et dapibus lacus. Lorem ipsum dolor sit amet.</p>
-                        </div><!-- End .feature-box-content -->
+                            <p>We're here to help! Whether you have questions about our rental process, need help
+                                selecting the right items, or require any support, our dedicated team is just a call
+                                away. Contact us today for prompt and reliable assistance.</p>
+                        </div>
+                        <!-- End .feature-box-content -->
                     </div><!-- End .feature-box -->
                 </div><!-- End .col-lg-3 -->
 
@@ -674,24 +672,30 @@
                             <h3 class="text-uppercase">Secured Payment</h3>
                             <h5>Safe & Fast</h5>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna,
-                                et dapibus lacus. Lorem ipsum dolor sit amet.</p>
-                        </div><!-- End .feature-box-content -->
+                            <p>Experience a seamless and secure payment process. Our platform ensures that all
+                                transactions are encrypted and protected, giving you peace of mind while making your
+                                payments quickly and easily. Your privacy and security are our top priority.</p>
+                        </div>
+                        <!-- End .feature-box-content -->
                     </div><!-- End .feature-box -->
                 </div><!-- End .col-lg-3 -->
 
                 <div class="col-sm-6 col-lg-3 appear-animate" data-animation-name="fadeInLeftShorter"
                     data-animation-delay="100" data-animation-duration="1000">
                     <div class="text-center feature-box feature-box-simple">
-                        <i class="sicon-action-undo"></i>
+                        <i class="text-gray-700 fas fa-shield-alt"></i>
+
 
                         <div class="p-0 feature-box-content">
-                            <h3 class="text-uppercase">Free Returns</h3>
-                            <h5>Easy & Free</h5>
+                            <h3 class="text-uppercase">Quality Service</h3>
+                            <h5>Premium Services</h5>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna,
-                                et dapibus lacus. Lorem ipsum dolor sit amet.</p>
-                        </div><!-- End .feature-box-content -->
+                            <p>We are committed to delivering the highest quality service. From the moment you browse
+                                our products to the time your rental is delivered, we ensure a hassle-free experience
+                                with excellent customer support at no additional cost. Enjoy top-notch service every
+                                step of the way.</p>
+                        </div>
+                        <!-- End .feature-box-content -->
                     </div><!-- End .feature-box -->
                 </div><!-- End .col-lg-3 -->
 
@@ -702,11 +706,13 @@
 
                         <div class="p-0 feature-box-content">
                             <h3 class="text-uppercase">Free Shipping</h3>
-                            <h5>Orders Over $99</h5>
+                            <h5>Orders Over ₦200k</h5>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec vestibulum magna,
-                                et dapibus lacus. Lorem ipsum dolor sit amet.</p>
-                        </div><!-- End .feature-box-content -->
+                            <p>Enjoy free shipping on all orders above ₦200,000! We make it easy for you to get your
+                                rentals delivered directly to your doorstep without any extra cost, ensuring a
+                                convenient and affordable experience.</p>
+                        </div>
+                        <!-- End .feature-box-content -->
                     </div><!-- End .feature-box -->
                 </div><!-- End .col-lg-3 -->
             </div><!-- End .row .feature-boxes-container-->

@@ -30,10 +30,19 @@
     <link href="/default/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
     @vite(['resources/css/app.css','resources/css/bootstrap.min.css', 'resources/js/app.js', 'resources/js/bootstrap.bundle.min.js'])
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    
 </head>
 
 <body>
