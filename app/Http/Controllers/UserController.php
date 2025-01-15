@@ -14,6 +14,9 @@ public function forgotPassword(){
     public function login(){
         return view('user.login');
     }
+    public function checkout(){
+        return view('user.checkout');
+    }
 public function userDashboard(){
     return view('user.dashboard');
 }

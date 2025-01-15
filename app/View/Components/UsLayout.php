@@ -3,8 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\Category;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class UsLayout extends Component
 {
@@ -21,6 +22,8 @@ class UsLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('user.layouts.us');
+        $category = Category::all();
+
+        return view('user.layouts.us',compact('category'));
     }
 }

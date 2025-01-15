@@ -41,14 +41,11 @@
 
                         <ul class="links">
                             <li><a href="#" class="no-underline">Help & FAQs</a></li>
-                            <li><a href="#" class="no-underline">Order Tracking</a></li>
                             <li><a href="#" class="no-underline">Shipping & Delivery</a></li>
                             <li><a href="#" class="no-underline">Orders History</a></li>
                             <li><a href="#" class="no-underline">Advanced Search</a></li>
                             <li><a href="dashboard.html" class="no-underline">My Account</a></li>
-                            <li><a href="#" class="no-underline">Careers</a></li>
-                            <li><a href="about.html" class="no-underline">About Us</a></li>
-                            <li><a href="#" class="no-underline">Corporate Sales</a></li>
+                            <li><a href="{{route("home.aboutUs")}}" class="no-underline">About Us</a></li>
                             <li><a href="#" class="no-underline">Privacy</a></li>
                         </ul>
                     </div><!-- End .widget -->

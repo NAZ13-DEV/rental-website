@@ -55,7 +55,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-nav">
                     <div class="container">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="" class="no-underline">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route("home.index")}}"class="no-underline">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 Login
                             </li>

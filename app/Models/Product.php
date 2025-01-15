@@ -23,4 +23,15 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id'); // Ensure this matches
     }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
+
+
 }

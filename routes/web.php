@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\HomeController;
 
 // Route::get('/', function () {
 //     return view('index');
@@ -16,28 +18,39 @@ Route::get('/user/forgot-password', [UserController::class, 'forgotPassword'])->
 Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
 
 
+Route::middleware('auth')->group(function () {
+    Route::get('/user/wishlist', [WishlistController::class, 'wishlist'])->name('user.wishlist');
+    Route::post('/user/wishlist', [WishlistController::class, 'add'])->name('user.wishlistAdd');
+    Route::delete('/user/wishlist/{id}', [WishlistController::class, 'remove'])->name('user.wishlistRemove')Route::post('/user/cart', [CartController::class, 'incrementQuantity'])->name('user.cartIncrement');
+
+
+    Route::get('/user/cart', [CartController::class, 'getCart'])->name('user.cart');
+    Route::post('/user/cart', [CartController::class, 'addToCart'])->name('user.cartAdd');
+    Route::delete('/user/cart/{id}', [CartController::class, 'removeFromCart'])->name('user.cartRemove');
+    Route::post('/user/cart', [CartController::class, 'incrementQuantity'])->name('user.cartIncrement');
+
+});
+
+Route::get('/user/checkout', [UserController::class, 'checkout'])->name('user.checkout');
+
+
 Route::get('/admin/registersss', action: [AdminController::class, 'showAdminRegistrationForm'])->name('admin.register');
 Route::post('/admin/registersss', [AdminController::class, 'adminRegister'])->name('admin.registersss');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', action: [AdminController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [AdminController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [AdminController::class, 'update'])->name(name: 'profile.update');
     Route::delete('/profile', [AdminController::class, 'deleteAccount'])->name('profile.delete');
 });
 
 
 Route::middleware(['auth'])->group(function () {
-    // Profile Update Route
     Route::patch('/profile', [AdminController::class, 'profileUpdate'])->name(name: 'admin.updateProfile');
-
-    // Change Password Route
     Route::patch('/profile/change-password', [AdminController::class, 'changePassword'])->name(name: 'admin.changePassword');
-
-    // Delete Account Route
     Route::delete('/profile/delete-account', [AdminController::class, 'deleteAccount'])->name(name:'admin.deleteAccount');
 });
 
