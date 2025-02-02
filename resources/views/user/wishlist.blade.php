@@ -70,7 +70,7 @@
                                     </td>
                                     <td class="action">
                                         <a href="" class="mt-1 btn btn-quickview mt-md-0" title="Quick View">Quick View</a>
-                                        <a class="btn btn-dark btn-add-cart product-type-simple btn-shop" href="">
+                                        <a class="btn btn-dark btn-add-cart product-type-simple btn-shop" href="{{ route('user.cartAdd', $item->product->id) }}">
                                             ADD TO CART
                                         </a>
                                     </td>

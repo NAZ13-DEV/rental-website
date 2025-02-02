@@ -3,7 +3,9 @@
 namespace App\View\Components;
 
 use Closure;
+use App\Models\Cart;
 use App\Models\Category;
+use App\Models\Location;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
@@ -23,7 +25,10 @@ class UsLayout extends Component
     public function render(): View|Closure|string
     {
         $category = Category::all();
+        $cart = Cart::all();
+        $location = Location::all();
 
-        return view('user.layouts.us',compact('category'));
+
+        return view('user.layouts.us',compact('category','cart'));
     }
 }

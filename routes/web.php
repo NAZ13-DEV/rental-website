@@ -10,24 +10,30 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
+
 // Route::get('/', function () {
 //     return view('index');
 // });
+
+
+
 
 Route::get('/user/forgot-password', [UserController::class, 'forgotPassword'])->name('user.forgot-password');
 Route::get('/user/login', [UserController::class, 'login'])->name('user.login');
 
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/user/wishlist', [WishlistController::class, 'wishlist'])->name('user.wishlist');
     Route::post('/user/wishlist', [WishlistController::class, 'add'])->name('user.wishlistAdd');
-    Route::delete('/user/wishlist/{id}', [WishlistController::class, 'remove'])->name('user.wishlistRemove')Route::post('/user/cart', [CartController::class, 'incrementQuantity'])->name('user.cartIncrement');
+    Route::delete('/user/wishlist/{id}', [WishlistController::class, 'remove'])->name('user.wishlistRemove');
 
 
-    Route::get('/user/cart', [CartController::class, 'getCart'])->name('user.cart');
-    Route::post('/user/cart', [CartController::class, 'addToCart'])->name('user.cartAdd');
-    Route::delete('/user/cart/{id}', [CartController::class, 'removeFromCart'])->name('user.cartRemove');
-    Route::post('/user/cart', [CartController::class, 'incrementQuantity'])->name('user.cartIncrement');
+    Route::get('/user/cart', [CartController::class, 'index'])->name('user.cart');
+    Route::patch('/user/update-cart', [CartController::class, 'updateCart'])->name('user.updateCart');
+    Route::get('/user/cart/{id}', [CartController::class, 'addToCart'])->name('user.cartAdd');
+    Route::delete('/user/cart', [CartController::class, 'cartDelete'])->name('user.cartDelete');
+
 
 });
 

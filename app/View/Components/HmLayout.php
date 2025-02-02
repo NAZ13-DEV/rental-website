@@ -2,10 +2,11 @@
 
 namespace App\View\Components;
 
-use App\Models\Category;
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\Cart;
+use App\Models\Category;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class HmLayout extends Component
 {
@@ -23,6 +24,8 @@ class HmLayout extends Component
     public function render(): View|Closure|string
     {
         $category = Category::all();
-        return view('home.layouts.hm', compact('category'));
+        $cart = Cart::all();
+        
+        return view('home.layouts.hm', compact('category','cart'));
     }
 }

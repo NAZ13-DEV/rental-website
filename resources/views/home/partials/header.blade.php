@@ -6,8 +6,9 @@
                     <i class="fas fa-bars"></i>
                 </button>
 
-                <a href="{{route('home.index')}}" class="py-4 logo">
-                    <img src="/default/assets/images/QTC_LOGO_PLAIN.png" alt="QTC Limited Logo" class="img-fluid" style="max-width: 60px;">
+                <a href="{{ route('home.index') }}" class="py-4 logo">
+                    <img src="/default/assets/images/QTC_LOGO_PLAIN.png" alt="QTC Limited Logo" class="img-fluid"
+                        style="max-width: 60px;">
 
                 </a>
 
@@ -46,7 +47,7 @@
                     <form action="#" method="get">
                         <div class=" header-search-wrapper sectionss" id="searchss">
                             <input type="search" class="form-control" name="" id="q"
-                                placeholder="I'm searching for..." required="" >
+                                placeholder="I'm searching for..." required="">
                             <div class="select-custom ">
                                 <select id="cat" name="cat">
                                     <option value="">All Categories</option>
@@ -73,13 +74,33 @@
                 <a href="{{ route('user.wishlist') }}" class="header-icon header-icon-wishlist" title="Wishlist"><i
                         class="icon-wishlist-2"></i></a>
 
+                {{-- @php
+                        // Fetch the cart from the session
+                        $cart = session('cart', []);
+                        $cartCount = array_sum(array_column($cart, 'quantity'));
+                    @endphp
+
                         <a class="position-relative dropdown-toggle cart-toggle" href="{{ route('user.cart') }}">
                             <i class="icon-cart-thick"></i>
                             <span class="text-white position-absolute d-flex align-items-center justify-content-center bg-danger rounded-circle"
                                   style="width: 20px; height: 20px; font-size: 0.75rem; top: -10px; right: -10px;">
-                                3
+                               {{$cartCount}}
                             </span>
-                        </a>
+                        </a> --}}
+
+                @php
+                    // Fetch the cart items count for the authenticated user
+                    $cartCount = \App\Models\Cart::where('user_id', auth()->id())->sum('quantity');
+                @endphp
+
+                <a class="position-relative dropdown-toggle cart-toggle" href="{{ route('user.cart') }}">
+                    <i class="icon-cart-thick"></i>
+                    <span
+                        class="text-white position-absolute d-flex align-items-center justify-content-center bg-danger rounded-circle"
+                        style="width: 20px; height: 20px; font-size: 0.75rem; top: -10px; right: -10px;">
+                        {{ $cartCount }}
+                    </span>
+                </a>
 
 
 

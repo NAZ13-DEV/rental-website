@@ -31,15 +31,6 @@
         </div><!-- End .home-slider -->
 
 
-
-
-
-
-
-
-
-
-
         <section class="container">
             <h2 class="pt-2 text-center section-title ls-n-15 m-b-4">Shop By Category</h2>
 
@@ -182,9 +173,9 @@
             <div class="py-4 row">
                 <div class="col-6 col-sm-4 col-md-3 col-xl-2 appear-animate" data-animation-name="fadeIn"
                     data-animation-delay="300" data-animation-duration="1000">
-                    <div class="product-default inner-quickview inner-icon">
+                    <div class="product-default inner-quickview inner-icon ">
                         @foreach ($products as $product)
-                            <figure>
+                            <figure class="">
                                 <a href="demo3-product.html">
                                     <img src="{{ $product->image }}" width="273" height="273" alt="productr" />
                                 </a>
@@ -200,8 +191,12 @@
                                                 class="icon-wishlist-2"></i></button>
                                     </form>
                                 </div>
-                                <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Add
-                                    Cart</a>
+                                {{-- <a href="{{route('user.cartAdd', $product->id)}}"  class="btn-quickviewss "  title="Add to Cart">Add
+                                    Cart</a> --}}
+                                    <a href="{{ route('user.cartAdd', $product->id) }}"
+                                        class="absolute bottom-2 left-1/2 transform -translate-x-1/2 visible transition duration-300 bg-black text-white px-4 py-2 mt-5 text-xl lg:text-2xl w-full text-center  hover:bg-[#333]">
+                                         Add to Cart
+                                     </a>
                             </figure>
                             <div class="product-details">
                                 <div class="category-wrap">
@@ -304,5 +299,11 @@
             </div><!-- End .row .feature-boxes-container-->
         </section>
     </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 </x-hm-layout>

@@ -107,7 +107,7 @@
                     <li><a href="{{route("home.contactUs")}}">Contact Us</a></li>
                     <li><a href="{{route("home.aboutUs")}}">About Us</a></li>
 
-                    
+
                 </ul>
 
             </nav><!-- End .mobile-nav -->
@@ -157,9 +157,25 @@
             </a>
         </div>
     </div>
-    
+
 
     <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+
+
+    <div class="row mt-3">
+        <div class="col-md-10 offset-md-1">
+            @if(session('success'))
+                <div class="alert alert-success">
+                  {{ session('success') }}
+                </div>
+            @endif
+
+            @yield('content')
+        </div>
+    </div>
+</div>
+
+@yield('scripts')
 
     <!-- Plugins JS File -->
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
@@ -185,7 +201,8 @@
         @endif
     </script>
 
-
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> --}}
     <!-- Main JS File -->
     <script src="/template/assets/js/main.min.js"></script>
 </body>
